@@ -22,7 +22,7 @@
                 <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/peternakan">Peternakan</a></li>
                 <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/alam">Alam</a></li>
             </ul>
-            </li>
+          </li>
             <li class="nav-item">
                 <a class="nav-link {{ ($title === "Digital Map" ) ? 'active' : '' }}" href="/digitalmap">Digital Map</a>
               </li>

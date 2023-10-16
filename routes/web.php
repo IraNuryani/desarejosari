@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProgramdarwisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,4 +96,20 @@ Route::get('/produk', function () {
     return view('produk', [
         "title" => "Produk"
     ]);
+});
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/dashboard', function(){
+        return view('dashboard.index', [
+            'title' => 'Dashboard'
+        ]);
+    });
+
+    Route::get('/tabel', [ProgramdarwisController::class, 'index']);
+    Route::get('/tabel/create', [ProgramdarwisController::class, 'create'])->name('dashboard.tabel.create');
+
 });
