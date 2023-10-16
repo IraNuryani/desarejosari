@@ -28,7 +28,7 @@
     <li class="nav-item">
         <a class="nav-link" href="">
             <i class="fa-solid fa-palette"></i>
-            <span>Tema</span></a>
+            <span>Tema Wisata</span></a>
 
         <a class="nav-link" href="">
             <i class="fa-solid fa-people-group"></i>
