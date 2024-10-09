@@ -15,14 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('bidang_id');
             $table->string('program');
-            $table->string('status');
-            $table->date('dimulai')->nullable();
-            $table->date('selesai')->nullable();
-            $table->string('tahun');
+            $table->enum('status', ['Rencana', 'Sedang Berjalan', 'Selesai']);
+            $table->timestamps('dimulai');
+            $table->timestamps('selesai');
             $table->string('lokasi');
-            $table->string('luas_area');
+            $table->string('luas_area')->nullable();
             $table->string('keterangan');
-            $table->string('jumlah_anggaran');
+            $table->integer('jumlah_anggaran');
             $table->timestamps();
         });
     }

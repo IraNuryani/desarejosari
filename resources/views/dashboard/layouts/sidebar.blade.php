@@ -4,7 +4,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon mb-3">
             <img class="img-profile" style="margin: 30px 0 0 0; width:50px;height:50px;"
-                    src="{{ asset('img/magelang.jpg') }}">
+                    src="{{ asset('img/magelang1.png') }}">
         </div>
         <div class="sidebar-brand-text mx-3">Rejosari</div>
     </a>
@@ -36,9 +36,6 @@
             <span>Pokdarwis</span></a>
 </li>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <!-- Nav Item - Utilities Collapse Menu -->
-
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -46,10 +43,6 @@
     <div class="sidebar-heading">
         Addons
     </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-
-    <!-- Nav Item - Charts -->
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
@@ -75,8 +68,4 @@
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-
-    <!-- Sidebar Message -->
-
-
 </ul>

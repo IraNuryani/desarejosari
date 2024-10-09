@@ -7,16 +7,9 @@ use Illuminate\Http\Request;
 
 class BidangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //$bidangs = Bidang::orderBy('id','ASC')->get(); 
-        // $data = Bidang::all();
-
-        // dd($bidangs);
-
         return view('dashboard.tabel.bidang.index', [
             'title' => 'Bidang Program',
             "bidangs" => Bidang::orderBy('id','ASC')->get()
@@ -24,18 +17,12 @@ class BidangController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('dashboard.tabel.bidang.create');
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -47,39 +34,43 @@ class BidangController extends Controller
         ]);
 
         // digunakan untuk mengembalikan ke tampilan index jika data berhasil di simpan
-        return redirect()->route('dashboard.tabel.bidang.index');
+        return redirect()->route('dashboard.tabel.bidang.index')->with('success', 'Data berhasil di tambahkan');
 
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Bidang $bidang)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Bidang $bidang)
+    public function edit($id)
     {
-        //
+        $data = Bidang::findOrFail($id);
+
+        return view('dashboard.tabel.bidang.edit', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Bidang $bidang)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'bidang_program' => 'required'
+        ]);
+
+        $data = Bidang::findOrFail($id);
+
+        $data->update([
+            'bidang_program' => $request->bidang_program
+        ]);
+
+        // digunakan untuk mengembalikan ke tampilan index post jika data berhasil di simpan
+        return redirect()->route('dashboard.tabel.bidang.index')->with('success', 'Data berhasil di Edit!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Bidang $bidang)
+    public function destroy($id)
     {
-        //
+        $data = Bidang::findOrFail($id);
+        $data->delete();
+
+        return redirect()->route('dashboard.tabel.bidang.index')->with('success', 'Data berhasil di hapus!');
     }
 }

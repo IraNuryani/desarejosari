@@ -22,6 +22,20 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('admin_assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('admin_assets/css/bootstrap-datepicker.css') }}" rel="stylesheet">
+    <script src="{{ asset('admin_asset/js/bootstrap-datepicker.js') }}"></script>
+
+    {{-- trix editor --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin_assets/css/trix.css') }}">
+    <script type="text/javascript" src="{{ asset('admin_assets/js/trix.js') }}"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+    @stack('style')
+
+    @vite(['resource/sass/app.scss', 'resource/js/app.js'])
+
 </head>
 
 <body id="page-top">
@@ -45,13 +59,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> --}}
-                        {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
-                    {{-- </div> --}}
 
                     @yield('contents')
                     {{-- BUAT TABEL/KONTEN --}}
@@ -91,11 +98,17 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/login">Logout</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    @stack('scripts')
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
@@ -103,6 +116,8 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('admin_assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin_asset/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+ 
+
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('admin_assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
@@ -117,6 +132,25 @@
     <script src="{{ asset('admin_assets/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('admin_assets/js/demo/chart-pie-demo.js') }}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+        <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
+        <!-- Your application script -->
+
+    <script type="text/javascript">
+        $('.date').datepicker({
+            format: 'yyyy/mm/dd',
+            autoclose: 'true'
+        })
+    </script>
+    <script src='{{ asset('admin_assets/js/bootstrap.min.js') }}'></script>
+
+    <style>
+        trix-toolbar [data-trix-button-group] {
+            display:none;
+        }
+    </style>
 </body>
 
 </html>

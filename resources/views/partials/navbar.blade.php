@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container col-lg-9">
-      <a class="navbar-brand" href="/">Desa Rejosari</a>
+      <img class="img-profile" style="margin: 30px 0 0 0; width:80px;height:80px;"
+                    src="{{ asset('img/magelang.jpg') }}">
+      <a class="navbar-brand justify-content-center" href="/">
+          <div class="sidebar-brand-text mx-3" style="font-family: 'Times New Roman', Times, serif">Desa Rejosari</div>
+          <div class="sidebar-brand-text mx-3" style="font-family: 'Times New Roman', Times, serif"><small>Kec. Bandongan, Kab. Magelang</small></div>
+          <div class="sidebar-brand-text mx-3" style="font-family: 'Times New Roman', Times, serif"><small>Prov. Jawa Tengah</small></div>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,9 +32,6 @@
             <li class="nav-item">
                 <a class="nav-link {{ ($title === "Digital Map" ) ? 'active' : '' }}" href="/digitalmap">Digital Map</a>
               </li>
-            <li class="nav-item">
-                <a class="nav-link {{ ($title === "Pokdarwis" ) ? 'active' : '' }}" href="/pokdarwis">Pokdarwis</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -36,11 +39,12 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/galeri">Galeri</a></li>
-                    <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/programdarwis">Pengelolaan Program Pokdarwis</a></li>
+                    <li><a class="dropdown-item nav-link {{ ($title === "Pokdarwis" ) }} text-dark" href="/pokdarwis">Pokdarwis</a>
+                  </li>
+                    <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/programdarwis">Program Pokdarwis</a></li>
                     <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/produk">Produk Unggulan</a></li>
                     <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/berita">Berita</a></li>
                     <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/paket">Paket Wisata</a></li>
-                    <li><a class="dropdown-item nav-link {{ ($title === "Pertanian" ) }} text-dark" href="/kontak">Kontak</a></li>
                 </ul>
             </li>
         </ul>

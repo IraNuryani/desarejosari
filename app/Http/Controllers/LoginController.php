@@ -17,14 +17,13 @@ class LoginController extends Controller
     {
         $credentials = $request->validate([
             'email' => 'required|email',
-            // 'email' => 'required|email:dns',
             'password' => 'required'
         ]);
         
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->route('dashboard.index');
         }
 
         return back()->With('loginError', 'Login Gagal!');
@@ -39,6 +38,6 @@ class LoginController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }

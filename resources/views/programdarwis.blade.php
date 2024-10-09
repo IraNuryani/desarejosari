@@ -1,77 +1,41 @@
 @extends('layouts.main')
 
 @section('container')
-  <h1>Halaman Pengelolaan Program Pokdarwis</h1>
-  <table class="table caption-top">
-    <caption>List of users</caption>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-  {{-- <table class="w-full table-auto border mt-3">
-    <thead class="border-b">
-        <tr>
-            <th class="text-sm text-left font-medium text-gray-900 px-6 py-4">NO</th>
-            <th class="text-sm font-medium text-gray-900 px-6 py-4">Program</th>
-            <th class="text-sm font-medium text-gray-900 px-6 py-4">Status</th>
-            <th class="text-sm font-medium text-gray-900 px-6 py-4">Tahun</th>
-            <th class="text-sm font-medium text-gray-900 px-6 py-4">Detail</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>pembangunan Jalan</td>
-        <td>On Progres</td>
-        <td>2023</td>
-        <td>edit</td>
-      </tr>
-    </tbody> --}}
-    {{-- <tbody>
-        @foreach ($post as $item)
-            <tr>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-left">
-                    {{ $item->id }}
-                </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                    {{ $item->judul }}
-                </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                    {{ $item->deskripsi }}
-                </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                    {{ $item->created_at }}
-                </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                    {{ $item->updated_at }}
-                </td>
-            </tr>
-        @endforeach
-    </tbody> --}}
+  <main>
+    <div class="row w3-serif">
+      <div class="col-md-2 py-3"></div>
+      <div class="col-md-8 py-3 card shadow" style="background-color: #ffffff" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="w3-monospace text-center mb-2" >Program Pokdarwis</h3>
+          <table class="table table-bordered w-100 d-block d-md-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Program</th>
+                <th>Status</th>z
+                <th>Dimulai</th>
+                <th>Selesai</th>
+                <th>Jumlah Anggaran</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($data as $key => $item)
+                  <tr class="border-b border-gray-200">
+                      <td class="py-3 px-6 text-center">{{$key + 1}}</td>
+                      <td class="py-3 px-6 text-center">{{$item->program}}</td>
+                      <td class="py-3 px-6 text-center"><label class="label {{ $item->status == 'Rencana' ? 'bg-info text-light' : ($item->status == 'Sedang Berjalan' ? 'bg-warning text-dark' : 'bg-success text-light') }}">{{$item->status}}</label></td>
+                      <td class="py-3 px-6 text-center">{{$item->dimulai}}</td>
+                      <td class="py-3 px-6 text-center">{{$item->selesai}}</td>
+                      <td class="py-3 px-6 text-center">{{number_format($item->jumlah_anggaran, 0, ',', '.')}}</td>
+                      <td class="py-3 px-6 text-center"><a href="/detail/program/{{ $item->id }}"><i class="fa-solid fa-eye"></i></a>
+                      </td>
+                  </tr>
+              @endforeach
+          </tbody>
+          </table>
+      </div>
+      <div class="col-md-2 py-3"></div>
+    </div>
+  </main>
 </table>
 @endsection

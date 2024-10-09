@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Admin Rejosari - Login</title>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -72,22 +72,8 @@
                                             <input type="password"name="password" class="form-control form-control-user"
                                                 id="password" placeholder="Password" required>
                                         </div>
-                                        {{-- <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div> --}}
                                         <button type="submit" class="btn btn-primary btn-block btn-user">Login</button>
-                                        {{-- <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a> --}}
                                     </form>
-                                        {{-- <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>

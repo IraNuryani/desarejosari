@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Bidang;
 use App\Models\Status;
-use App\Models\Programdarwis;
-use App\Models\User;
+use App\Models\TemaWisata;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Programdarwis;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -55,15 +56,44 @@ class DatabaseSeeder extends Seeder
     Programdarwis::create([
             'bidang_id' => 1,
             'program' => 'Pembangunan jalan wisata',
+            'tahun' => '2024',
             'status' => 'Rencana',
             'dimulai' => '2023-12-12',
             'selesai' => '2024-10-10',
-            'tahun' => '2024',
             'lokasi' => 'Kalikebo',
             'luas_area' => '2 KM',
-            'keterangan' => 'Pembangunan jalan yang digunakan untuk menuju tempat wisata kebun durian',
-            'jumlah_anggaran' => '80.000.000'
+            'keterangan' => 'Pembangunan jalan yang digunakan untuk menuju tempat wisata Gumuk Setri',
+            'jumlah_anggaran' => 80000000
     ]);
+
+    Programdarwis::create([
+        'bidang_id' => 2,
+        'program' => 'sosialisasi',
+        'tahun' => '2024',
+        'status' => 'Selesai',
+        'dimulai' => '2023-12-12',
+        'selesai' => '2024-10-10',
+        'lokasi' => 'Balaidesa',
+        'luas_area' => '3',
+        'keterangan' => 'Sosialisasi untuk membuat paket wisata',
+        'jumlah_anggaran' => 200000
+]);
+    Programdarwis::create([
+        'bidang_id' => 1,
+        'program' => 'Pembangunan jalan wisata',
+        'tahun' => '2024',
+        'status' => 'Rencana',
+        'dimulai' => '2023-12-12',
+        'selesai' => '2024-10-10',
+        'lokasi' => 'Kedon',
+        'luas_area' => '5 KM',
+        'keterangan' => 'Pembangunan jalan yang digunakan untuk menuju tempat wisata kebun durian',
+        'jumlah_anggaran' => 150000000
+]);
+
+    TemaWisata::create([
+    'tema_wisata' => 'Edukasi peternakan'
+]);
 
     }
 }

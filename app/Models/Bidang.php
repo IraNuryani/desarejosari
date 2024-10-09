@@ -15,7 +15,7 @@ class Bidang extends Model
         'bidang_program'
     ];
 
-    public function programdarwis()
+    public function programdarwis() 
     {
         return $this->hasMany(Programdarwis::class);
     }
