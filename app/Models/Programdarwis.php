@@ -27,6 +27,4 @@ class Programdarwis extends Model
     {
         return \Carbon\Carbon::parse($this->attributes['selesai'])->translatedFormat('d F Y');
     }
-
-
 }

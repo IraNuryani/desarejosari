@@ -94,6 +94,5 @@ class DatabaseSeeder extends Seeder
     TemaWisata::create([
     'tema_wisata' => 'Edukasi peternakan'
 ]);
-
     }
 }

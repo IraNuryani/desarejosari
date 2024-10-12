@@ -21,7 +21,6 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('admin_assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
-
     <link href="{{ asset('admin_assets/css/bootstrap-datepicker.css') }}" rel="stylesheet">
     <script src="{{ asset('admin_asset/js/bootstrap-datepicker.js') }}"></script>
 
@@ -35,8 +34,6 @@
     @stack('style')
 
     @vite(['resource/sass/app.scss', 'resource/js/app.js'])
-
-</head>
 
 <body id="page-top">
 
@@ -59,7 +56,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     @yield('contents')
                     {{-- BUAT TABEL/KONTEN --}}
                     
@@ -108,7 +104,6 @@
     </div>
 
     @stack('scripts')
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
@@ -117,8 +112,6 @@
     <script src="{{ asset('admin_assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin_asset/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
  
-
-
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('admin_assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
@@ -131,7 +124,6 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('admin_assets/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('admin_assets/js/demo/chart-pie-demo.js') }}"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
         <!-- Chartisan -->

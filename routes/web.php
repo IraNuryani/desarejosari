@@ -102,6 +102,7 @@ Route::get('/produk', function () {
     ]);
 });
 
+
 Route::get('/detail/program/{id}', [ProgramdarwisController::class, 'show'])->name('detail.show');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Bidang;
 use App\Charts\ProgramChart;
 use Illuminate\Http\Request;
@@ -69,6 +68,7 @@ class ProgramdarwisController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show($id)
     {
         $data = Programdarwis::findOrFail($id);
@@ -78,7 +78,6 @@ class ProgramdarwisController extends Controller
             "program" => $data
         ]);
     }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -129,5 +128,6 @@ class ProgramdarwisController extends Controller
         $data->delete();
 
         return redirect()->route('dashboard.tabel.program.index')->with('success', 'Data berhasil di hapus');
+
     }
 }
